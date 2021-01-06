@@ -114,22 +114,29 @@ const onClick = (evento) => {
   if (player === player1) {
     // style background-color igual red
     let celula = addDisc(coluna, "red");
-    redPlayer.push(celula);
-    jogadas.push(celula);
+    if (celula > 0) {
+      redPlayer.push(celula);
+      console.log(`Vermelho: `, redPlayer);
+      jogadas.push(celula);
+      player = player2;
+    }
     if (checkWinner(redPlayer)) {
       console.log("Vermelho vencedor");
     }
-    player = player2;
   } else {
     let celula = addDisc(coluna, "black");
-    blackPlayer.push(celula);
-    jogadas.push(celula);
+    if (celula > 0) {
+      blackPlayer.push(celula);
+      console.log(`Pretas: `, blackPlayer);
+      jogadas.push(celula);
+      player = player1;
+    }
     if (checkWinner(blackPlayer)) {
       console.log("Preto vencedor");
     }
-    player = player1;
   }
 
+  console.log(`Jogadas: `, jogadas);
   // checa se todas as casas foram preenchidas
   if (jogadas.length === 42) {
     console.log("Empate!");
