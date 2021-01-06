@@ -74,66 +74,31 @@ const addDisc = (coluna, color) => {
     if (coluna.childElementCount === 0) {
       output = Number(coluna.dataset.num);
     } else {
-      output = Number(coluna.lastChild.id);
+      output = Number(coluna.lastChild.id) + 7;
     }
 
     // recebe a coluna e adiciona o filho
     switch (coluna.dataset.num) {
       case "1":
-        if (coluna.childElementCount === 0) {
-          createDisc(coluna, output, `linha ${color}`);
-        } else {
-          output += 7;
-          createDisc(coluna, output, `linha ${color}`);
-        }
+        createDisc(coluna, output, `linha ${color}`);
         break;
       case "2":
-        if (coluna.childElementCount === 0) {
-          createDisc(coluna, output, `linha ${color}`);
-        } else {
-          output += 7;
-          createDisc(coluna, output, `linha ${color}`);
-        }
+        createDisc(coluna, output, `linha ${color}`);
         break;
       case "3":
-        if (coluna.childElementCount === 0) {
-          createDisc(coluna, output, `linha ${color}`);
-        } else {
-          output += 7;
-          createDisc(coluna, output, `linha ${color}`);
-        }
+        createDisc(coluna, output, `linha ${color}`);
         break;
       case "4":
-        if (coluna.childElementCount === 0) {
-          createDisc(coluna, output, `linha ${color}`);
-        } else {
-          output += 7;
-          createDisc(coluna, output, `linha ${color}`);
-        }
+        createDisc(coluna, output, `linha ${color}`);
         break;
       case "5":
-        if (coluna.childElementCount === 0) {
-          createDisc(coluna, output, `linha ${color}`);
-        } else {
-          output += 7;
-          createDisc(coluna, output, `linha ${color}`);
-        }
+        createDisc(coluna, output, `linha ${color}`);
         break;
       case "6":
-        if (coluna.childElementCount === 0) {
-          createDisc(coluna, output, `linha ${color}`);
-        } else {
-          output += 7;
-          createDisc(coluna, output, `linha ${color}`);
-        }
+        createDisc(coluna, output, `linha ${color}`);
         break;
       case "7":
-        if (coluna.childElementCount === 0) {
-          createDisc(coluna, output, `linha ${color}`);
-        } else {
-          output += 7;
-          createDisc(coluna, output, `linha ${color}`);
-        }
+        createDisc(coluna, output, `linha ${color}`);
         break;
       default:
     }
@@ -144,9 +109,8 @@ const addDisc = (coluna, color) => {
 const onClick = (evento) => {
   // pega a coluna que foi clicada para incluir os disco
   const coluna = document.getElementById(evento.target.id);
-  console.log(coluna.hasChildNodes());
+
   // adiciona disco
-  console.log(player);
   if (player === player1) {
     // style background-color igual red
     let celula = addDisc(coluna, "red");
@@ -169,18 +133,21 @@ const onClick = (evento) => {
   // checa se todas as casas foram preenchidas
   if (jogadas.length === 42) {
     console.log("Empate!");
-    start();
+    reset();
   }
 };
 
-const start = () => {
-  //criar tabuleiro
+const reset = () => {
   tabuleiro.innerHTML = "";
   redPlayer = [];
   blackPlayer = [];
   jogadas = [];
   player = player1;
+  start();
+};
 
+const start = () => {
+  //criar tabuleiro
   for (let i = 1; i <= 7; i++) {
     let coluna = document.createElement("div");
     coluna.setAttribute("id", `col${i}`);
