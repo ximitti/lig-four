@@ -185,11 +185,9 @@ let player1 = document.getElementById("player1");
 let player2 = document.getElementById("player2");
 let player = player1;
 
-activePlayer(player, true);
-//console.log(player.firstElementChild.style);
-
 // busca tabuleiro e inicia captura do evento
 const tabuleiro = document.getElementById("container");
 tabuleiro.addEventListener("click", onClick);
+activePlayer(player, true);
 start();
 
