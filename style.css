@@ -25,12 +25,11 @@ body {
   border: 1px solid #000;
   max-width: 300px;
   margin: 5px auto;
-  min-height: 242px;
+  min-height: 245px;
   height: 100%;
 }
 
 .disco {
-  border: 1px blueviolet solid;
   border-radius: 20px;
   display: flex;
   flex-direction: column-reverse;
@@ -101,4 +100,134 @@ body {
 
 .w3-container {
   text-align: center;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flex button{
+  font-weight: 700;
+  border-radius: 50px;
+  outline: none;
+}
+
+#result {
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: dodgerblue;
+  font-weight: 700;
+}
+
+@media (min-width: 610px) {
+  .header h1 {
+    width: 580px;
+  }
+  
+  #container{
+  max-width: 600px;
+  min-height: 505px;
+  margin: 0 10px;
+  }
+
+  .disco {
+    border-radius: 42px;
+    width: 79px;
+    height: 79px;
+    margin: 2px;
+  }
+
+  .jogadores{
+    width: 600px;
+  }
+
+  #player1 p {
+    font-size: 24px;
+    padding-top: 4px;
+  }
+
+  #player2 p {
+    font-size: 24px;
+    padding-top: 4px;
+  }
+
+  #player1 span {
+    top: 4px;
+    width: 25px;
+    height: 25px;
+  }
+
+  #player2 span {
+    top: 4px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .flex button{
+    font-size: 25px;
+    font-weight: 700;
+    border-radius: 50px;
+  }
+  
+  #result {
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: dodgerblue;
+    font-weight: 700;
+  }
+
+}
+
+@media (min-width: 900px){
+  .header h1 {
+    width: 880px;
+    height: 200px;
+    font-size: 60px;
+    line-height: 200px;
+  }
+  
+  #container{
+  max-width: 880px;
+  min-height: 505px;
+  margin: 0 10px;
+  }
+
+  .disco {
+    border-radius: 42px;
+    width: 79px;
+    height: 79px;
+    margin: 2px;
+  }
+
+  .jogadores{
+    width: 600px;
+  }
+
+  #player1 p {
+    font-size: 24px;
+    padding-top: 4px;
+  }
+
+  #player2 p {
+    font-size: 24px;
+    padding-top: 4px;
+  }
+
+  #player1 span {
+    top: 4px;
+    width: 25px;
+    height: 25px;
+  }
+
+  #player2 span {
+    top: 4px;
+    width: 25px;
+    height: 25px;
+  }
 }
