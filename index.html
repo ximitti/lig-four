@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lig-4</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
     <div class="header">
@@ -12,13 +13,29 @@
     </div>
     <div class="jogadores">
       <div id="player1">
-          <p>JOGADOR 1 <span></span></p> 
+          <p>
+              JOGADOR 1 <span></span>
+          </p> 
       </div>
       <div id="player2">
-        <p><span></span> JOGADOR 2 </p>
+        <p>
+            <span></span> JOGADOR 2 
+        </p>
     </div>
     </div>
-    <section id="container" ></section>
+    <section id="container" >
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content w3-animate-zoom ">
+              <div class="w3-container">
+                <p>
+                    <span id="result"> </span>
+                </p>
+                <button  type="button" onclick="reset()">jogar novamente</button>            
+
+              </div>
+            </div>
+          </div>
+    </section>
     <script src="./condicao-vitoria.js"></script>
     <script src="./lig-4.js"></script>
 </body>
