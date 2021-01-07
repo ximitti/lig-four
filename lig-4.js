@@ -115,42 +115,40 @@ const onClick = (evento) => {
     // style background-color igual red
     let celula = addDisc(coluna, "red");
     if (celula > 0) {
+      activePlayer(player, false);
       redPlayer.push(celula);
       console.log(`Vermelho: `, redPlayer);
       jogadas.push(celula);
       player = player2;
+      activePlayer(player, true);
     }
     if (checkWinner(redPlayer)) {
-      console.log("Vermelho vencedor");
+      modal("Vermelho vencedor");
     }
   } else {
     let celula = addDisc(coluna, "black");
     if (celula > 0) {
+      activePlayer(player, false);
       blackPlayer.push(celula);
       console.log(`Pretas: `, blackPlayer);
       jogadas.push(celula);
       player = player1;
+      activePlayer(player, true);
     }
     if (checkWinner(blackPlayer)) {
-      console.log("Preto vencedor");
+      modal("Preto vencedor");
     }
   }
 
   console.log(`Jogadas: `, jogadas);
   // checa se todas as casas foram preenchidas
   if (jogadas.length === 42) {
-    console.log("Empate!");
-    reset();
+    modal("Empate!");
   }
 };
 
 const reset = () => {
-  tabuleiro.innerHTML = "";
-  redPlayer = [];
-  blackPlayer = [];
-  jogadas = [];
-  player = player1;
-  start();
+  document.location.reload(true);
 };
 
 const start = () => {
@@ -164,6 +162,20 @@ const start = () => {
   }
 };
 
+const activePlayer = (player, active) => {
+
+  if(active){
+    player.firstElementChild.style.boxShadow = "0px 0px 5px 2px #ccc";
+  }else{
+    player.firstElementChild.style.boxShadow = "none";
+  }
+}
+
+const modal = (txt) =>{
+  document.getElementById('id01').style.display='block';
+  document.getElementById('result').innerHTML = txt ;
+}
+
 // Inicialização do jogo
 // objetos globais
 let redPlayer = [];
@@ -173,7 +185,11 @@ let player1 = document.getElementById("player1");
 let player2 = document.getElementById("player2");
 let player = player1;
 
+activePlayer(player, true);
+//console.log(player.firstElementChild.style);
+
 // busca tabuleiro e inicia captura do evento
 const tabuleiro = document.getElementById("container");
 tabuleiro.addEventListener("click", onClick);
 start();
+

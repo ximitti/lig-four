@@ -25,26 +25,31 @@ body{
     border: 1px solid #000;
     max-width: 300px;
     margin: 5px auto;
-    min-height: 300px;
+    min-height: 242px;
     height: 100%;
 }
 
+<<<<<<< HEAD
 .disco{
     border: 1px blueviolet solid;
+=======
+.linha{
+>>>>>>> f3927b2e12b5aa72ea7277a96649d7b5983e95b6
     border-radius: 20px;
     display: flex;
     flex-direction: column-reverse;
-    /* background-color: #f00; */
     width: 38px;
     height: 38px;
     
 }
 
 .red {
-    background-color: #f00;    
+    background-color: #f00;   
+    margin: 1px 0px;
 }
 .black {
-    background-color: #000;    
+    background-color: #000;   
+    margin: 1px 0px;  
 }
 
 .col{
@@ -73,6 +78,18 @@ body{
     border-radius: 20px;
 }
 
+#player1 p{
+    /*box-shadow: 0px 0px 5px 2px #ccc;*/
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+#player2 p{
+    /*box-shadow: 0px 0px 5px 2px #ccc;*/
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
 #player2 span{
     display: inline-block;
     position: relative;
@@ -81,4 +98,12 @@ body{
     height: 15px;
     background-color: black;
     border-radius: 20px;
+}
+
+.w3-container p{
+    text-align: center;
+}
+
+.w3-container {
+    text-align: center;
 }
