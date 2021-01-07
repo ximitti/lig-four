@@ -123,7 +123,7 @@ const onClick = (evento) => {
       activePlayer(player, true);
     }
     if (checkWinner(redPlayer)) {
-      modal("Vermelho vencedor");
+      modal("Vermelho Vencedor");
     }
   } else {
     let celula = addDisc(coluna, "black");
@@ -136,7 +136,7 @@ const onClick = (evento) => {
       activePlayer(player, true);
     }
     if (checkWinner(blackPlayer)) {
-      modal("Preto vencedor");
+      modal("Preto Vencedor");
     }
   }
 
@@ -165,7 +165,7 @@ const start = () => {
 const activePlayer = (player, active) => {
 
   if(active){
-    player.firstElementChild.style.boxShadow = "0px 0px 5px 2px #ccc";
+    player.firstElementChild.style.boxShadow = "0px 0px 5px 2px #888";
   }else{
     player.firstElementChild.style.boxShadow = "none";
   }
