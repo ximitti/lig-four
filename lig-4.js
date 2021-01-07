@@ -80,25 +80,25 @@ const addDisc = (coluna, color) => {
     // recebe a coluna e adiciona o filho
     switch (coluna.dataset.num) {
       case "1":
-        createDisc(coluna, output, `linha ${color}`);
+        createDisc(coluna, output, `disco ${color}`);
         break;
       case "2":
-        createDisc(coluna, output, `linha ${color}`);
+        createDisc(coluna, output, `disco ${color}`);
         break;
       case "3":
-        createDisc(coluna, output, `linha ${color}`);
+        createDisc(coluna, output, `disco ${color}`);
         break;
       case "4":
-        createDisc(coluna, output, `linha ${color}`);
+        createDisc(coluna, output, `disco ${color}`);
         break;
       case "5":
-        createDisc(coluna, output, `linha ${color}`);
+        createDisc(coluna, output, `disco ${color}`);
         break;
       case "6":
-        createDisc(coluna, output, `linha ${color}`);
+        createDisc(coluna, output, `disco ${color}`);
         break;
       case "7":
-        createDisc(coluna, output, `linha ${color}`);
+        createDisc(coluna, output, `disco ${color}`);
         break;
       default:
     }

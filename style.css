@@ -29,7 +29,7 @@ body{
     height: 100%;
 }
 
-.linha{
+.disco{
     border: 1px blueviolet solid;
     border-radius: 20px;
     display: flex;
@@ -51,7 +51,6 @@ body{
     display: flex;
     flex-direction: column-reverse;
     align-items: center;    
-    /* border-radius: 5px; */
     border: 1px blueviolet solid;
     width: 100%;
 }
