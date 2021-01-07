@@ -54,6 +54,11 @@ body {
   width: 100%;
 }
 
+.col:hover{
+  background-color: rgb(102, 102, 102, 0.1) ;
+  cursor: pointer;
+}
+
 .jogadores {
   display: flex;
   flex-direction: row;
