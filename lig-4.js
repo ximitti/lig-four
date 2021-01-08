@@ -63,7 +63,7 @@ const checkWinner = (arr) => {
 const createDisc = (coluna, id, classe) => {
   const disc = document.createElement("div");
   disc.setAttribute("id", id);
-  disc.setAttribute("class", classe);
+  disc.classList.add("disco", classe);
   coluna.appendChild(disc);
 };
 
@@ -80,25 +80,25 @@ const addDisc = (coluna, color) => {
     // recebe a coluna e adiciona o filho
     switch (coluna.dataset.num) {
       case "1":
-        createDisc(coluna, output, `disco ${color}`);
+        createDisc(coluna, output, color);
         break;
       case "2":
-        createDisc(coluna, output, `disco ${color}`);
+        createDisc(coluna, output, color);
         break;
       case "3":
-        createDisc(coluna, output, `disco ${color}`);
+        createDisc(coluna, output, color);
         break;
       case "4":
-        createDisc(coluna, output, `disco ${color}`);
+        createDisc(coluna, output, color);
         break;
       case "5":
-        createDisc(coluna, output, `disco ${color}`);
+        createDisc(coluna, output, color);
         break;
       case "6":
-        createDisc(coluna, output, `disco ${color}`);
+        createDisc(coluna, output, color);
         break;
       case "7":
-        createDisc(coluna, output, `disco ${color}`);
+        createDisc(coluna, output, color);
         break;
       default:
     }
@@ -109,38 +109,35 @@ const addDisc = (coluna, color) => {
 const onClick = (evento) => {
   // pega a coluna que foi clicada para incluir os disco
   const coluna = document.getElementById(evento.target.id);
+  let celula = 0;
 
   // adiciona disco
   if (player === player1) {
-    // style background-color igual red
-    let celula = addDisc(coluna, "red");
+    celula = addDisc(coluna, "red");
     if (celula > 0) {
       activePlayer(player, false);
       redPlayer.push(celula);
-      console.log(`Vermelho: `, redPlayer);
       jogadas.push(celula);
       player = player2;
       activePlayer(player, true);
-    }
-    if (checkWinner(redPlayer)) {
-      modal("Vermelho Vencedor");
+      if (checkWinner(redPlayer)) {
+        modal("Vermelho Vencedor");
+      }
     }
   } else {
-    let celula = addDisc(coluna, "black");
+    celula = addDisc(coluna, "black");
     if (celula > 0) {
       activePlayer(player, false);
       blackPlayer.push(celula);
-      console.log(`Pretas: `, blackPlayer);
       jogadas.push(celula);
       player = player1;
       activePlayer(player, true);
-    }
-    if (checkWinner(blackPlayer)) {
-      modal("Preto Vencedor");
+      if (checkWinner(blackPlayer)) {
+        modal("Preto Vencedor");
+      }
     }
   }
 
-  console.log(`Jogadas: `, jogadas);
   // checa se todas as casas foram preenchidas
   if (jogadas.length === 42) {
     modal("Empate!");
@@ -148,7 +145,7 @@ const onClick = (evento) => {
 };
 
 const reset = () => {
-  document.location.reload(true);
+  location.reload();
 };
 
 const start = () => {
@@ -163,18 +160,17 @@ const start = () => {
 };
 
 const activePlayer = (player, active) => {
-
-  if(active){
+  if (active) {
     player.firstElementChild.style.boxShadow = "0px 0px 5px 2px #888";
-  }else{
+  } else {
     player.firstElementChild.style.boxShadow = "none";
   }
-}
+};
 
-const modal = (txt) =>{
-  document.getElementById('id01').style.display='block';
-  document.getElementById('result').innerHTML = txt ;
-}
+const modal = (txt) => {
+  document.getElementById("id01").style.display = "block";
+  document.getElementById("result").innerHTML = txt;
+};
 
 // Inicialização do jogo
 // objetos globais
@@ -190,4 +186,3 @@ const tabuleiro = document.getElementById("container");
 tabuleiro.addEventListener("click", onClick);
 activePlayer(player, true);
 start();
-
