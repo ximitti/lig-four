@@ -65,6 +65,7 @@ const createDisc = (coluna, id, classe) => {
   disc.setAttribute("id", id);
   disc.classList.add("disco", classe);
   coluna.appendChild(disc);
+  disc.style.transform = `translatey(-${disc.offsetTop - coluna.offsetTop}px)`;
 };
 
 const addDisc = (coluna, color) => {
